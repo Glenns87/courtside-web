@@ -10,7 +10,7 @@ import {
 } from "@/lib/validation";
 import { rateLimit } from "@/lib/rate-limit";
 
-const LEAD_FROM_EMAIL = "Courtside <leads@courtside.nl>";
+const DEFAULT_FROM_EMAIL = "Courtside <onboarding@resend.dev>";
 
 export type LeadFormState = {
   ok: boolean;
@@ -126,7 +126,7 @@ async function sendLeadNotification(lead: LeadInput): Promise<void> {
 
   const resend = new Resend(apiKey);
   const { error } = await resend.emails.send({
-    from: LEAD_FROM_EMAIL,
+    from: process.env.RESEND_FROM_EMAIL || DEFAULT_FROM_EMAIL,
     to,
     replyTo: lead.email,
     subject: `Nieuwe aanvraag — ${lead.level} (${lead.days.join("/")} · ${lead.times.join("/")})`,

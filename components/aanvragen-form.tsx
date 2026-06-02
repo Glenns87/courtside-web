@@ -54,6 +54,30 @@ export function AanvragenForm({ level, days, times }: Props) {
       <input type="hidden" name="locations" value={locations.join(",")} />
       <input type="hidden" name="otherLocation" value={otherLocation} />
 
+      {/* Honeypot — buiten viewport gepositioneerd zodat bots invullen, mensen niet. */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          left: "-10000px",
+          top: "auto",
+          width: "1px",
+          height: "1px",
+          overflow: "hidden",
+        }}
+      >
+        <label>
+          Website (laat leeg)
+          <input
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            defaultValue=""
+          />
+        </label>
+      </div>
+
       <div>
         <span className="font-mono text-[11px] uppercase tracking-[1.2px] text-ink-dim">
           Voorkeur locatie (optioneel)

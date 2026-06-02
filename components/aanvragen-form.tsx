@@ -1,7 +1,9 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useActionState, useRef, useState } from "react";
 import { cn } from "@/lib/cn";
+import { submitLead } from "@/app/actions";
+import type { LeadFormState } from "@/app/actions";
 
 type Location = "Utrecht" | "Amersfoort" | "Nieuwegein" | "Amsterdam" | "Anders";
 
@@ -12,6 +14,8 @@ const LOCATIONS: Location[] = [
   "Amsterdam",
   "Anders",
 ];
+
+const INITIAL_STATE: LeadFormState = { ok: true };
 
 type Props = {
   level: string;
@@ -24,6 +28,10 @@ export function AanvragenForm({ level, days, times }: Props) {
   const [otherLocation, setOtherLocation] = useState("");
   const [ctaHover, setCtaHover] = useState(false);
   const otherInputRef = useRef<HTMLInputElement>(null);
+  const [state, formAction, isPending] = useActionState(
+    submitLead,
+    INITIAL_STATE,
+  );
 
   const toggleLocation = (loc: Location) => {
     const isAdding = !locations.includes(loc);
@@ -45,9 +53,10 @@ export function AanvragenForm({ level, days, times }: Props) {
   };
 
   const andersSelected = locations.includes("Anders");
+  const fieldErrors = state.fieldErrors ?? {};
 
   return (
-    <form action="/aanvragen/bedankt" className="mt-6 flex flex-col gap-5">
+    <form action={formAction} className="mt-6 flex flex-col gap-5">
       <input type="hidden" name="level" value={level} />
       <input type="hidden" name="days" value={days.join(",")} />
       <input type="hidden" name="times" value={times.join(",")} />
@@ -128,8 +137,14 @@ export function AanvragenForm({ level, days, times }: Props) {
           name="email"
           required
           autoComplete="email"
+          aria-invalid={Boolean(fieldErrors.email) || undefined}
           className="mt-1 block w-full border border-ink bg-surface px-4 py-3 font-sans text-[15px] text-ink focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2"
         />
+        {fieldErrors.email && (
+          <span className="mt-1 block font-mono text-[11px] text-terra">
+            {fieldErrors.email}
+          </span>
+        )}
       </label>
 
       <label className="block">
@@ -140,24 +155,42 @@ export function AanvragenForm({ level, days, times }: Props) {
           type="tel"
           name="phone"
           autoComplete="tel"
+          aria-invalid={Boolean(fieldErrors.phone) || undefined}
           className="mt-1 block w-full border border-line bg-surface px-4 py-3 font-sans text-[15px] text-ink focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2"
         />
+        {fieldErrors.phone && (
+          <span className="mt-1 block font-mono text-[11px] text-terra">
+            {fieldErrors.phone}
+          </span>
+        )}
       </label>
+
+      {!state.ok && state.error && (
+        <p
+          role="alert"
+          className="border border-terra bg-surface px-4 py-3 font-mono text-[12px] text-terra"
+        >
+          {state.error}
+        </p>
+      )}
 
       <button
         type="submit"
+        disabled={isPending}
         onMouseEnter={() => setCtaHover(true)}
         onMouseLeave={() => setCtaHover(false)}
-        className="relative mt-2 flex w-full items-center justify-between overflow-hidden bg-ink px-5 py-[18px] font-serif text-[17px] tracking-[-0.3px] text-bg"
+        className="relative mt-2 flex w-full items-center justify-between overflow-hidden bg-ink px-5 py-[18px] font-serif text-[17px] tracking-[-0.3px] text-bg disabled:cursor-not-allowed disabled:opacity-60"
       >
         <span
           aria-hidden="true"
           className={cn(
             "absolute inset-0 bg-terra transition-transform duration-[280ms] ease-cta-wipe",
-            ctaHover ? "translate-x-0" : "-translate-x-[101%]",
+            ctaHover && !isPending ? "translate-x-0" : "-translate-x-[101%]",
           )}
         />
-        <span className="relative z-10">Versturen</span>
+        <span className="relative z-10">
+          {isPending ? "Moment…" : "Versturen"}
+        </span>
         <span
           className="relative z-10 font-mono text-[11px] tracking-[1px]"
           aria-hidden="true"

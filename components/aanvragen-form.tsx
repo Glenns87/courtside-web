@@ -157,8 +157,8 @@ export function AanvragenForm({ level, days, times }: Props) {
                 className={cn(
                   "border px-3 py-2 font-sans text-[13px] tracking-[-0.1px] transition-colors duration-150",
                   active
-                    ? "border-terra bg-terra text-bg"
-                    : "border-line bg-paper text-ink hover:border-ink",
+                    ? "border-ink bg-ink text-bg"
+                    : "border-line bg-surface text-ink hover:border-ink",
                 )}
               >
                 {option.label}

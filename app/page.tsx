@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SiteNav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { LiveScorecard } from "@/components/live-scorecard";
@@ -26,6 +27,27 @@ export default function HomePage() {
       <Benefits />
       <ClubsAndTrainer />
       <FinalCta />
+
+      <section className="border-y border-line py-12">
+        <div className="container-site">
+          <div className="mb-[14px] flex items-center gap-[10px]">
+            <div className="h-px w-6 bg-ink" />
+            <span className="font-mono text-[10px] uppercase tracking-[1.6px] text-ink-dim">
+              — Voor trainers
+            </span>
+          </div>
+          <p className="font-serif text-[20px] leading-[1.3] tracking-[-0.3px] text-ink">
+            Ben jij padel-trainer?{" "}
+            <Link
+              href="/trainer-worden"
+              className="underline-offset-4 hover:underline"
+            >
+              Word ook onderdeel van Courtside →
+            </Link>
+          </p>
+        </div>
+      </section>
+
       <SiteFooter />
     </>
   );

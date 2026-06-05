@@ -139,23 +139,23 @@ async function sendLeadNotification(lead: LeadInput): Promise<void> {
 }
 
 function formatLeadEmail(lead: LeadInput): string {
+  const lessonTypeLabels: Record<typeof lead.lessonType & string, string> = {
+    losse: "Losse les",
+    cursus: "Cursus",
+    unknown: "Weet nog niet",
+  };
   const lines = [
     "Nieuwe aanvraag via courtside.nl",
     "",
     `Niveau:         ${lead.level}`,
     `Dagen:          ${lead.days.join(", ")}`,
     `Tijden:         ${lead.times.join(", ")}`,
+    ...(lead.lessonType
+      ? [`Type lessen:    ${lessonTypeLabels[lead.lessonType]}`]
+      : []),
     `Aantal personen: ${lead.groupSize === "unknown" ? "Weet nog niet" : lead.groupSize}`,
     `Locaties:       ${lead.locations.length ? lead.locations.join(", ") : "—"}`,
   ];
-  if (lead.lessonType) {
-    const lessonTypeLabels: Record<typeof lead.lessonType & string, string> = {
-      losse: "Losse les",
-      cursus: "Cursus",
-      unknown: "Weet nog niet",
-    };
-    lines.push(`Type lessen:    ${lessonTypeLabels[lead.lessonType]}`);
-  }
   if (lead.otherLocation) {
     lines.push(`Andere locatie: ${lead.otherLocation}`);
   }

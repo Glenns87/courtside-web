@@ -15,6 +15,14 @@ const LOCATIONS: Location[] = [
   "Anders",
 ];
 
+const GROUP_SIZES: { value: string; label: string }[] = [
+  { value: "1", label: "1" },
+  { value: "2", label: "2" },
+  { value: "3", label: "3" },
+  { value: "4", label: "4" },
+  { value: "unknown", label: "Weet ik nog niet" },
+];
+
 const INITIAL_STATE: LeadFormState = { ok: true };
 
 type Props = {
@@ -26,6 +34,7 @@ type Props = {
 export function AanvragenForm({ level, days, times }: Props) {
   const [locations, setLocations] = useState<Location[]>([]);
   const [otherLocation, setOtherLocation] = useState("");
+  const [groupSize, setGroupSize] = useState("");
   const [ctaHover, setCtaHover] = useState(false);
   const otherInputRef = useRef<HTMLInputElement>(null);
   const [state, formAction, isPending] = useActionState(
@@ -62,6 +71,7 @@ export function AanvragenForm({ level, days, times }: Props) {
       <input type="hidden" name="times" value={times.join(",")} />
       <input type="hidden" name="locations" value={locations.join(",")} />
       <input type="hidden" name="otherLocation" value={otherLocation} />
+      <input type="hidden" name="groupSize" value={groupSize} />
 
       {/* Honeypot — buiten viewport gepositioneerd zodat bots invullen, mensen niet. */}
       <div
@@ -125,6 +135,41 @@ export function AanvragenForm({ level, days, times }: Props) {
               aria-label="Andere voorkeurslocatie"
             />
           </div>
+        )}
+      </div>
+
+      <div>
+        <span className="font-mono text-[11px] uppercase tracking-[1.2px] text-ink-dim">
+          Met hoeveel personen?
+        </span>
+        <p className="mt-1 text-[12px] leading-[1.5] text-ink-mute">
+          1 = privéles, 4 = vol team van twee koppels
+        </p>
+        <div className="mt-2 flex flex-wrap gap-1">
+          {GROUP_SIZES.map((option) => {
+            const active = groupSize === option.value;
+            return (
+              <button
+                key={option.value}
+                type="button"
+                aria-pressed={active}
+                onClick={() => setGroupSize(option.value)}
+                className={cn(
+                  "border px-3 py-2 font-sans text-[13px] tracking-[-0.1px] transition-colors duration-150",
+                  active
+                    ? "border-terra bg-terra text-bg"
+                    : "border-line bg-paper text-ink hover:border-ink",
+                )}
+              >
+                {option.label}
+              </button>
+            );
+          })}
+        </div>
+        {fieldErrors.groupSize && (
+          <span className="mt-1 block font-mono text-[11px] text-terra">
+            {fieldErrors.groupSize}
+          </span>
         )}
       </div>
 

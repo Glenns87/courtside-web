@@ -48,6 +48,7 @@ export async function submitLead(
     level: formData.get("level"),
     days: splitCsv(formData.get("days")),
     times: splitCsv(formData.get("times")),
+    groupSize: formData.get("groupSize") ?? "",
     email: formData.get("email") ?? "",
     phone: formData.get("phone") ?? "",
     locations: splitCsv(formData.get("locations")),
@@ -143,6 +144,7 @@ function formatLeadEmail(lead: LeadInput): string {
     `Niveau:         ${lead.level}`,
     `Dagen:          ${lead.days.join(", ")}`,
     `Tijden:         ${lead.times.join(", ")}`,
+    `Aantal personen: ${lead.groupSize === "unknown" ? "Weet nog niet" : lead.groupSize}`,
     `Locaties:       ${lead.locations.length ? lead.locations.join(", ") : "—"}`,
   ];
   if (lead.otherLocation) {

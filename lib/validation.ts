@@ -10,6 +10,8 @@ export const LOCATIONS = [
   "Anders",
 ] as const;
 
+export const GROUP_SIZES = ["1", "2", "3", "4", "unknown"] as const;
+
 const TIME_RE = /^([01]\d|2[0-3]):[0-5]\d$/;
 
 export const LeadIntentSchema = z.object({
@@ -29,6 +31,7 @@ const optionalString = (max: number) =>
     .transform((v) => (v ? v : undefined));
 
 export const LeadSchema = LeadIntentSchema.extend({
+  groupSize: z.enum(GROUP_SIZES),
   email: z.string().trim().toLowerCase().email().max(254),
   phone: optionalString(30),
   locations: z.array(z.enum(LOCATIONS)).max(LOCATIONS.length).default([]),

@@ -259,9 +259,9 @@ function formatTrainerEmail(trainer: TrainerInput): string {
   };
   const teachLabels: Record<TrainerInput["teachExperience"], string> = {
     geen: "Nog geen",
-    sporadisch: "Sporadisch",
-    vast: "Vast (1+ jaar)",
-    veel: "Veel ervaring (3+ jaar)",
+    kort: "Minder dan 1 jaar",
+    midden: "1–3 jaar",
+    ervaren: "Meer dan 3 jaar",
   };
 
   const lines = [

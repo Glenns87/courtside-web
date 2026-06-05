@@ -16,9 +16,9 @@ const PLAY_LEVELS: { value: string; label: string }[] = [
 
 const TEACH_EXPERIENCE: { value: string; label: string }[] = [
   { value: "geen", label: "Nog geen" },
-  { value: "sporadisch", label: "Sporadisch" },
-  { value: "vast", label: "Vast (1+ jaar)" },
-  { value: "veel", label: "Veel ervaring (3+ jaar)" },
+  { value: "kort", label: "Minder dan 1 jaar" },
+  { value: "midden", label: "1–3 jaar" },
+  { value: "ervaren", label: "Meer dan 3 jaar" },
 ];
 
 const INITIAL_STATE: LeadFormState = { ok: true };

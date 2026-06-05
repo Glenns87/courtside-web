@@ -14,7 +14,7 @@ export const GROUP_SIZES = ["1", "2", "3", "4", "unknown"] as const;
 export const LESSON_TYPES = ["losse", "cursus", "unknown"] as const;
 
 export const PLAY_LEVELS = ["rec", "wed", "comp"] as const;
-export const TEACH_EXPERIENCE = ["geen", "sporadisch", "vast", "veel"] as const;
+export const TEACH_EXPERIENCE = ["geen", "kort", "midden", "ervaren"] as const;
 
 const TIME_RE = /^([01]\d|2[0-3]):[0-5]\d$/;
 

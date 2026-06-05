@@ -11,6 +11,7 @@ export const LOCATIONS = [
 ] as const;
 
 export const GROUP_SIZES = ["1", "2", "3", "4", "unknown"] as const;
+export const LESSON_TYPES = ["losse", "cursus", "unknown"] as const;
 
 const TIME_RE = /^([01]\d|2[0-3]):[0-5]\d$/;
 
@@ -32,6 +33,7 @@ const optionalString = (max: number) =>
 
 export const LeadSchema = LeadIntentSchema.extend({
   groupSize: z.enum(GROUP_SIZES),
+  lessonType: z.enum(LESSON_TYPES).optional(),
   email: z.string().trim().toLowerCase().email().max(254),
   phone: optionalString(30),
   locations: z.array(z.enum(LOCATIONS)).max(LOCATIONS.length).default([]),

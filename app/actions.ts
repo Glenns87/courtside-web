@@ -49,6 +49,7 @@ export async function submitLead(
     days: splitCsv(formData.get("days")),
     times: splitCsv(formData.get("times")),
     groupSize: formData.get("groupSize") ?? "",
+    lessonType: formData.get("lessonType") || undefined,
     email: formData.get("email") ?? "",
     phone: formData.get("phone") ?? "",
     locations: splitCsv(formData.get("locations")),
@@ -147,6 +148,14 @@ function formatLeadEmail(lead: LeadInput): string {
     `Aantal personen: ${lead.groupSize === "unknown" ? "Weet nog niet" : lead.groupSize}`,
     `Locaties:       ${lead.locations.length ? lead.locations.join(", ") : "—"}`,
   ];
+  if (lead.lessonType) {
+    const lessonTypeLabels: Record<typeof lead.lessonType & string, string> = {
+      losse: "Losse les",
+      cursus: "Cursus",
+      unknown: "Weet nog niet",
+    };
+    lines.push(`Type lessen:    ${lessonTypeLabels[lead.lessonType]}`);
+  }
   if (lead.otherLocation) {
     lines.push(`Andere locatie: ${lead.otherLocation}`);
   }

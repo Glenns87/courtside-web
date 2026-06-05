@@ -23,6 +23,12 @@ const GROUP_SIZES: { value: string; label: string }[] = [
   { value: "unknown", label: "Weet ik nog niet" },
 ];
 
+const LESSON_TYPES: { value: string; label: string }[] = [
+  { value: "losse", label: "Losse les" },
+  { value: "cursus", label: "Cursus" },
+  { value: "unknown", label: "Weet ik nog niet" },
+];
+
 const INITIAL_STATE: LeadFormState = { ok: true };
 
 type Props = {
@@ -35,6 +41,7 @@ export function AanvragenForm({ level, days, times }: Props) {
   const [locations, setLocations] = useState<Location[]>([]);
   const [otherLocation, setOtherLocation] = useState("");
   const [groupSize, setGroupSize] = useState("");
+  const [lessonType, setLessonType] = useState("");
   const [ctaHover, setCtaHover] = useState(false);
   const otherInputRef = useRef<HTMLInputElement>(null);
   const [state, formAction, isPending] = useActionState(
@@ -72,6 +79,7 @@ export function AanvragenForm({ level, days, times }: Props) {
       <input type="hidden" name="locations" value={locations.join(",")} />
       <input type="hidden" name="otherLocation" value={otherLocation} />
       <input type="hidden" name="groupSize" value={groupSize} />
+      <input type="hidden" name="lessonType" value={lessonType} />
 
       {/* Honeypot — buiten viewport gepositioneerd zodat bots invullen, mensen niet. */}
       <div
@@ -136,6 +144,33 @@ export function AanvragenForm({ level, days, times }: Props) {
             />
           </div>
         )}
+      </div>
+
+      <div>
+        <span className="font-mono text-[11px] uppercase tracking-[1.2px] text-ink-dim">
+          Wat heb je in gedachten?
+        </span>
+        <div className="mt-2 flex flex-wrap gap-1">
+          {LESSON_TYPES.map((option) => {
+            const active = lessonType === option.value;
+            return (
+              <button
+                key={option.value}
+                type="button"
+                aria-pressed={active}
+                onClick={() => setLessonType(option.value)}
+                className={cn(
+                  "border px-3 py-2 font-sans text-[13px] tracking-[-0.1px] transition-colors duration-150",
+                  active
+                    ? "border-ink bg-ink text-bg"
+                    : "border-line bg-surface text-ink hover:border-ink",
+                )}
+              >
+                {option.label}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       <div>

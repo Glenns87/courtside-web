@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Bedankt",
-  description: "We matchen je binnen 48 uur. Onze trainer neemt persoonlijk contact op.",
+  description: "We sturen je binnen 48 uur een voorstel voor je eerste les.",
   robots: { index: false, follow: false },
 };
 
@@ -22,11 +22,11 @@ export default function BedanktPage() {
             </span>
           </div>
           <h1 className="font-serif text-[34px] font-light leading-[0.98] tracking-[-1px]">
-            Dank je wel. We <em>bellen je</em> terug.
+            Mooi. <em>De service is aan ons.</em>
           </h1>
           <p className="mt-5 max-w-hero-sub text-[15px] leading-[1.55] text-ink-dim">
-            Onze hoofdtrainer neemt binnen 48 uur contact op met een voorstel voor je eerste les.
-            Gratis, vrijblijvend en op jouw gewenste tijd.
+            We sturen je binnen 48 uur een voorstel voor je eerste les. Gratis,
+            vrijblijvend en op jouw moment.
           </p>
           <Link
             href="/"

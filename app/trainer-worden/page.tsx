@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Word trainer",
   description:
     "Word trainer bij Courtside. We koppelen padel-spelers aan trainers in jouw regio — werk in je eigen tempo, op clubs die jij kiest.",
-  robots: { index: false, follow: false },
+  robots: { index: true, follow: true },
 };
 
 export default function TrainerWordenPage() {

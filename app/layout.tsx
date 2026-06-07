@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { Providers } from "./providers";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -57,7 +58,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${fraunces.variable} ${inter.variable} ${jetbrains.variable}`}
     >
       <body className="bg-bg font-sans text-ink antialiased">
-        <main className="min-h-screen pb-10">{children}</main>
+        <Providers>
+          <main className="min-h-screen pb-10">{children}</main>
+        </Providers>
       </body>
     </html>
   );

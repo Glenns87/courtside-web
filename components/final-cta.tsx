@@ -32,7 +32,7 @@ export function FinalCta() {
             Start vandaag.
           </h3>
           <p className="mb-6 max-w-[280px] text-[14px] leading-[1.5] opacity-[0.72]">
-            Eerste les gratis. Geen abonnement. Annuleer tot 4 uur van tevoren.
+            Geen abonnement, geen verplichting. Wij koppelen persoonlijk.
           </p>
 
           <button
@@ -59,20 +59,9 @@ export function FinalCta() {
             </span>
           </button>
 
-          {/* Mini avatar-stack */}
-          <div className="mt-5 flex items-center gap-2.5 border-t border-white/15 pt-4">
-            <div className="flex shrink-0">
-              {["#D66A3C", "#E8C9A8", "#EAA07C"].map((color, i) => (
-                <div
-                  key={color}
-                  className="h-6 w-6 rounded-full border-2 border-green"
-                  style={{ background: color, marginLeft: i === 0 ? 0 : -8 }}
-                  aria-hidden="true"
-                />
-              ))}
-            </div>
+          <div className="mt-5 border-t border-white/15 pt-4">
             <div className="font-mono text-[10px] uppercase tracking-[0.6px] opacity-70">
-              1.284 spelers · 48u match-garantie
+              Persoonlijk contact binnen 48 uur na je aanmelding.
             </div>
           </div>
         </div>

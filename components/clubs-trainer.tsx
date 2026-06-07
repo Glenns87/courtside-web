@@ -7,12 +7,6 @@ const CLUBS: { tag: string; name: string }[] = [
   { tag: "VR", name: "VRK Sports" },
 ];
 
-const CERTS: { t: string; s: string }[] = [
-  { t: "PPR", s: "Certified" },
-  { t: "NGPB", s: "Level 3" },
-  { t: "ESP", s: "Nationaal" },
-];
-
 export function ClubsAndTrainer() {
   return (
     <section aria-labelledby="partners-heading" className="pt-14">
@@ -47,44 +41,6 @@ export function ClubsAndTrainer() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Trainer card */}
-        <div className="relative mt-5 overflow-hidden bg-ink p-[18px] text-bg lg:-mx-10 lg:px-10 lg:py-6">
-          <div className="mb-[14px] font-mono text-[10px] uppercase tracking-[1.2px] opacity-60">
-            Hoofdtrainer
-          </div>
-          <div className="mb-4 flex items-end gap-[14px]">
-            <div
-              aria-hidden="true"
-              className="flex h-[58px] w-[58px] shrink-0 items-center justify-center bg-terra font-serif text-[24px] italic text-bg"
-            >
-              RM
-            </div>
-            <div>
-              <div className="font-serif text-[22px] leading-none tracking-[-0.4px]">
-                Rafa Méndez
-              </div>
-              <div className="mt-1 text-[12px] opacity-60">
-                Ex-Tour #142 · 12 jaar ervaring
-              </div>
-            </div>
-          </div>
-          <div className="grid grid-cols-3 border-t border-white/15 pt-[14px]">
-            {CERTS.map((c, i) => (
-              <div
-                key={c.t}
-                className={i !== 0 ? "border-l border-white/15 pl-3" : ""}
-              >
-                <div className="font-serif text-[14px] font-medium tracking-[-0.2px] text-bg">
-                  {c.t}
-                </div>
-                <div className="mt-0.5 font-mono text-[9px] uppercase tracking-[0.6px] opacity-50">
-                  {c.s}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

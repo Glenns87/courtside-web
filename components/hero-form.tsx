@@ -196,38 +196,6 @@ export function HeroForm() {
         </a>
         .
       </p>
-
-      {/* Avatar-stack social proof */}
-      <div className="mt-[18px] flex items-center gap-3 border-t border-line pt-4">
-        <div className="flex shrink-0">
-          {[
-            { color: "#D66A3C", initials: "MK" },
-            { color: "#1E3A2F", initials: "LJ" },
-            { color: "#E8C9A8", initials: "AR" },
-            { color: "#EAA07C", initials: "TV" },
-          ].map((a, i) => (
-            <div
-              key={a.initials}
-              className="flex h-[30px] w-[30px] items-center justify-center rounded-full border-2 border-bg font-serif text-[11px] font-medium italic text-bg"
-              style={{
-                background: a.color,
-                marginLeft: i === 0 ? 0 : -10,
-              }}
-              aria-hidden="true"
-            >
-              {a.initials}
-            </div>
-          ))}
-        </div>
-        <div className="text-[12px] leading-[1.4]">
-          <div className="font-serif text-[14px] font-medium tracking-[-0.2px] text-ink">
-            ★ 4.9 <span className="font-normal text-ink-dim">· 340+ reviews</span>
-          </div>
-          <div className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.5px] text-ink-mute">
-            Gemiddeld binnen 48u een match
-          </div>
-        </div>
-      </div>
     </>
   );
 }

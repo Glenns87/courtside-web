@@ -4,6 +4,7 @@ import { Hero } from "@/components/hero";
 import { LiveScorecard } from "@/components/live-scorecard";
 import { Benefits } from "@/components/benefits";
 import { ClubsAndTrainer } from "@/components/clubs-trainer";
+import { Founder } from "@/components/founder";
 import { FinalCta } from "@/components/final-cta";
 import { SiteFooter } from "@/components/footer";
 import { localBusinessSchema, serviceSchema } from "@/lib/schema-org";
@@ -26,6 +27,7 @@ export default function HomePage() {
       <LiveScorecard />
       <Benefits />
       <ClubsAndTrainer />
+      <Founder />
       <FinalCta />
 
       <section className="border-y border-line py-12">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import { organizationSchema, websiteSchema } from "@/lib/schema-org";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -60,6 +61,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <main className="min-h-screen pb-10">{children}</main>
         </Providers>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
       </body>
     </html>
   );

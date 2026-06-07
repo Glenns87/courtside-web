@@ -29,13 +29,13 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://courtsidepadel.nl"),
   title: {
-    default: "Courtside Padel — Padel lessen op jouw niveau",
+    default: "Courtside Padel — Padel-lessen op jouw niveau in de Randstad",
     template: "%s · Courtside Padel",
   },
   description:
     "Padel-lessen die bij jou passen. Vooraf duidelijkheid over trainer, niveau en planning. Aanmelden duurt 60 seconden — wij koppelen je binnen 48 uur.",
   openGraph: {
-    title: "Courtside Padel — Padel lessen op jouw niveau",
+    title: "Courtside Padel — Padel-lessen op jouw niveau in de Randstad",
     description:
       "Padel-lessen die bij jou passen. Vooraf duidelijkheid over trainer, niveau en planning. Aanmelden duurt 60 seconden — wij koppelen je binnen 48 uur.",
     locale: "nl_NL",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Courtside Padel — Padel lessen op jouw niveau",
+    title: "Courtside Padel — Padel-lessen op jouw niveau in de Randstad",
     description:
       "Padel-lessen die bij jou passen. Vooraf duidelijkheid over trainer, niveau en planning. Aanmelden duurt 60 seconden — wij koppelen je binnen 48 uur.",
   },

@@ -21,7 +21,7 @@ export function FinalCta() {
           <div className="mb-4 font-mono text-[10px] uppercase tracking-[1.4px] opacity-60">
             — Aanmelden
           </div>
-          <h3
+          <h2
             id="final-cta-heading"
             className="mb-4 font-serif text-[34px] font-light leading-[0.95] tracking-[-1px]"
           >
@@ -30,7 +30,7 @@ export function FinalCta() {
             <em>doorgroeien.</em>
             <br />
             Start vandaag.
-          </h3>
+          </h2>
           <p className="mb-6 max-w-[280px] text-[14px] leading-[1.5] opacity-[0.72]">
             Geen abonnement, geen verplichting. Wij koppelen persoonlijk.
           </p>

@@ -28,8 +28,7 @@ export function Hero() {
 
         {/* Sub */}
         <p className="mt-6 max-w-hero-sub text-[15px] leading-[1.55] text-ink-dim md:max-w-hero-sub-md">
-          Een boutique padel-programma dat jou koppelt aan spelers op exact jouw niveau — en
-          gecertificeerde trainers die je verder brengen.
+          Een boutique padel-programma dat jou koppelt aan spelers op exact jouw niveau.
         </p>
 
         {/* Interactive form: niveau + planning + CTA */}

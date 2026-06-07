@@ -42,7 +42,7 @@ export default function HomePage() {
               href="/trainer-worden"
               className="underline-offset-4 hover:underline"
             >
-              Word ook onderdeel van Courtside →
+              Word ook onderdeel van Courtside Padel →
             </Link>
           </p>
         </div>

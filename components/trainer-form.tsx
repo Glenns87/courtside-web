@@ -215,7 +215,7 @@ export function TrainerForm() {
           name="about"
           rows={4}
           maxLength={500}
-          placeholder="Waarom Courtside, wat breng je mee?"
+          placeholder="Waarom Courtside Padel, wat breng je mee?"
           aria-invalid={Boolean(fieldErrors.about) || undefined}
           className="mt-1 block w-full resize-y border border-line bg-surface px-4 py-3 font-sans text-[15px] text-ink placeholder:text-ink-mute focus:border-ink focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2"
         />

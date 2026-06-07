@@ -27,23 +27,23 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://courtside.nl"),
   title: {
-    default: "Courtside — Padel lessen op jouw niveau",
-    template: "%s · Courtside",
+    default: "Courtside Padel — Padel lessen op jouw niveau",
+    template: "%s · Courtside Padel",
   },
   description:
     "Een boutique padel-programma dat jou koppelt aan spelers op exact jouw niveau — en gecertificeerde trainers die je verder brengen. Eerste les gratis.",
-  keywords: ["padel", "padel lessen", "Utrecht", "padel trainer", "padel club", "Courtside"],
+  keywords: ["padel", "padel lessen", "Utrecht", "padel trainer", "padel club", "Courtside Padel"],
   openGraph: {
-    title: "Courtside — Padel lessen op jouw niveau",
+    title: "Courtside Padel — Padel lessen op jouw niveau",
     description:
       "Les op jouw niveau, elke week. Gekoppeld aan spelers op gelijk niveau en gecertificeerde trainers.",
     locale: "nl_NL",
     type: "website",
-    siteName: "Courtside",
+    siteName: "Courtside Padel",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Courtside — Padel lessen op jouw niveau",
+    title: "Courtside Padel — Padel lessen op jouw niveau",
     description:
       "Les op jouw niveau, elke week. Gekoppeld aan spelers op gelijk niveau en gecertificeerde trainers.",
   },

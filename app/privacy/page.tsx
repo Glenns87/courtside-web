@@ -6,7 +6,7 @@ import { SiteFooter } from "@/components/footer";
 export const metadata: Metadata = {
   title: "Privacyverklaring",
   description:
-    "Hoe Courtside met je persoonsgegevens omgaat — doel, rechtsgrond, bewaartermijn en je rechten onder de AVG.",
+    "Hoe Courtside Padel met je persoonsgegevens omgaat — doel, rechtsgrond, bewaartermijn en je rechten onder de AVG.",
 };
 
 const LAST_UPDATED = "2 juni 2026";
@@ -42,7 +42,7 @@ export default function PrivacyPage() {
           {/* REVIEW JURIST: concept-tekst, nog niet juridisch getoetst. Loop alles na vóór publicatie. */}
           <div className="prose-courtside mt-8 space-y-6 text-[15px] leading-[1.6] text-ink">
             <p>
-              Courtside hecht waarde aan jouw privacy. In deze verklaring leggen we
+              Courtside Padel hecht waarde aan jouw privacy. In deze verklaring leggen we
               uit welke persoonsgegevens we verzamelen, waarom, hoe lang we ze
               bewaren en welke rechten je hebt onder de Algemene Verordening
               Gegevensbescherming (AVG).
@@ -53,7 +53,7 @@ export default function PrivacyPage() {
             </h2>
             {/* REVIEW JURIST: vul de definitieve juridische entiteit, KvK-nummer en vestigingsadres in. */}
             <p>
-              Courtside [REVIEW JURIST: juridische naam], gevestigd te [REVIEW
+              Courtside Padel [REVIEW JURIST: juridische naam], gevestigd te [REVIEW
               JURIST: adres], ingeschreven bij de Kamer van Koophandel onder
               nummer [REVIEW JURIST: KvK].
             </p>

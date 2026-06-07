@@ -4,7 +4,7 @@ export function SiteNav() {
   return (
     <header className="sticky top-0 z-30 backdrop-nav border-b border-line">
       <div className="flex items-center justify-between px-5 py-3 lg:px-10">
-        <Link href="/" className="flex items-center gap-[9px]" aria-label="Courtside home">
+        <Link href="/" className="flex items-center gap-[9px]" aria-label="Courtside Padel home">
           <svg
             width="22"
             height="22"
@@ -17,7 +17,7 @@ export function SiteNav() {
             <path d="M7 11 Q 11 18, 15 11" stroke="#F4EFE3" strokeWidth="1.6" fill="none" />
           </svg>
           <span className="font-serif text-[20px] font-medium tracking-[-0.4px] text-ink">
-            Courtside
+            Courtside Padel
           </span>
         </Link>
         <button

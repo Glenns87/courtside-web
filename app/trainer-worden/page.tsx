@@ -6,7 +6,7 @@ import { TrainerForm } from "@/components/trainer-form";
 export const metadata: Metadata = {
   title: "Word trainer",
   description:
-    "Word trainer bij Courtside. We koppelen padel-spelers aan trainers in jouw regio — werk in je eigen tempo, op clubs die jij kiest.",
+    "Word trainer bij Courtside Padel. We koppelen padel-spelers aan trainers in jouw regio — werk in je eigen tempo, op clubs die jij kiest.",
   robots: { index: true, follow: true },
 };
 
@@ -23,7 +23,7 @@ export default function TrainerWordenPage() {
             </span>
           </div>
           <h1 className="font-serif text-[34px] font-light leading-[0.98] tracking-[-1px] text-ink">
-            Word trainer bij <em>Courtside</em>.
+            Word trainer bij <em>Courtside Padel</em>.
           </h1>
           <p className="mt-5 max-w-hero-sub text-[15px] leading-[1.55] text-ink-dim">
             We koppelen padel-spelers aan trainers in jouw regio. Werk in je

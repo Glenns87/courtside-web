@@ -6,7 +6,7 @@ import { SiteFooter } from "@/components/footer";
 export const metadata: Metadata = {
   title: "Algemene voorwaarden",
   description:
-    "De voorwaarden waaronder Courtside je matcht met een trainer en lessen aanbiedt.",
+    "De voorwaarden waaronder Courtside Padel je matcht met een trainer en lessen aanbiedt.",
 };
 
 const LAST_UPDATED = "2 juni 2026";
@@ -46,7 +46,7 @@ export default function VoorwaardenPage() {
             </h2>
             {/* REVIEW JURIST: identieke entiteitsgegevens als in privacyverklaring opvoeren. */}
             <p>
-              Courtside [REVIEW JURIST: juridische naam] (&ldquo;Courtside&rdquo;,
+              Courtside Padel [REVIEW JURIST: juridische naam] (&ldquo;Courtside Padel&rdquo;,
               &ldquo;wij&rdquo;) verbindt sporters met padel- en tennistrainers
               via deze website.
             </p>
@@ -93,9 +93,9 @@ export default function VoorwaardenPage() {
             {/* REVIEW JURIST: aansprakelijkheidsbeperking en blessure-disclaimer juridisch beoordelen. */}
             <p>
               Sportbeoefening brengt risico op blessures met zich mee. Deelname
-              is volledig op eigen risico. Courtside is niet aansprakelijk voor
+              is volledig op eigen risico. Courtside Padel is niet aansprakelijk voor
               schade ontstaan tijdens of door deelname aan lessen, tenzij sprake
-              is van opzet of grove schuld aan de zijde van Courtside.
+              is van opzet of grove schuld aan de zijde van Courtside Padel.
             </p>
 
             <h2 className="font-serif text-[22px] tracking-[-0.4px] text-ink">
@@ -122,7 +122,7 @@ export default function VoorwaardenPage() {
               9. Wijzigingen
             </h2>
             <p>
-              Courtside kan deze voorwaarden wijzigen. De meest recente versie
+              Courtside Padel kan deze voorwaarden wijzigen. De meest recente versie
               staat op deze pagina; de datum bovenaan geeft aan wanneer de tekst
               voor het laatst is bijgewerkt.
             </p>

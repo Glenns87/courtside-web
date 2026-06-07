@@ -5,7 +5,7 @@
 export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Courtside",
+  name: "Courtside Padel",
   description:
     "Boutique padel-programma dat spelers koppelt aan gelijkwaardig niveau en gecertificeerde trainers.",
   url: "https://courtside.nl",
@@ -33,7 +33,7 @@ export const serviceSchema = {
   name: "Padel lessen op niveau",
   provider: {
     "@type": "LocalBusiness",
-    name: "Courtside",
+    name: "Courtside Padel",
   },
   areaServed: { "@type": "Country", name: "Nederland" },
   description:

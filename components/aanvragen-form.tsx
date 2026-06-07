@@ -6,12 +6,12 @@ import { cn } from "@/lib/cn";
 import { submitLead } from "@/app/actions";
 import type { LeadFormState } from "@/app/actions";
 
-type Location = "Utrecht" | "Amersfoort" | "Nieuwegein" | "Amsterdam" | "Anders";
+type Location = "Utrecht" | "Rotterdam" | "Den Haag" | "Amsterdam" | "Anders";
 
 const LOCATIONS: Location[] = [
   "Utrecht",
-  "Amersfoort",
-  "Nieuwegein",
+  "Rotterdam",
+  "Den Haag",
   "Amsterdam",
   "Anders",
 ];

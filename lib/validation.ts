@@ -4,8 +4,8 @@ export const LEVELS = ["Beginner", "Intermediate", "Gevorderd"] as const;
 export const DAYS = ["Ma", "Di", "Wo", "Do", "Vr", "Za", "Zo"] as const;
 export const LOCATIONS = [
   "Utrecht",
-  "Amersfoort",
-  "Nieuwegein",
+  "Rotterdam",
+  "Den Haag",
   "Amsterdam",
   "Anders",
 ] as const;

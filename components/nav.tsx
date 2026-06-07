@@ -20,12 +20,6 @@ export function SiteNav() {
             Courtside Padel
           </span>
         </Link>
-        <button
-          type="button"
-          className="border border-line px-[14px] py-2 text-[12px] font-medium uppercase tracking-[0.3px] text-ink transition-colors duration-150 hover:border-ink"
-        >
-          Inloggen
-        </button>
       </div>
     </header>
   );

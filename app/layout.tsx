@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     template: "%s · Courtside Padel",
   },
   description:
-    "Een boutique padel-programma dat jou koppelt aan spelers op exact jouw niveau — en gecertificeerde trainers die je verder brengen. Eerste les gratis.",
+    "Padel-lessen die bij jou passen. Vooraf duidelijkheid over trainer, niveau en planning. Aanmelden duurt 60 seconden — wij koppelen je binnen 48 uur.",
   keywords: ["padel", "padel lessen", "Utrecht", "padel trainer", "padel club", "Courtside Padel"],
   openGraph: {
     title: "Courtside Padel — Padel lessen op jouw niveau",
     description:
-      "Les op jouw niveau, elke week. Gekoppeld aan spelers op gelijk niveau en gecertificeerde trainers.",
+      "Padel-lessen die bij jou passen. Vooraf duidelijkheid over trainer, niveau en planning. Aanmelden duurt 60 seconden — wij koppelen je binnen 48 uur.",
     locale: "nl_NL",
     type: "website",
     siteName: "Courtside Padel",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Courtside Padel — Padel lessen op jouw niveau",
     description:
-      "Les op jouw niveau, elke week. Gekoppeld aan spelers op gelijk niveau en gecertificeerde trainers.",
+      "Padel-lessen die bij jou passen. Vooraf duidelijkheid over trainer, niveau en planning. Aanmelden duurt 60 seconden — wij koppelen je binnen 48 uur.",
   },
   robots: { index: true, follow: true },
 };

@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/footer";
 import { TrainerForm } from "@/components/trainer-form";
 
 export const metadata: Metadata = {
-  title: "Word trainer",
+  title: "Word padel-trainer · Werk in jouw regio",
   description:
     "Word trainer bij Courtside Padel. We koppelen padel-spelers aan trainers in jouw regio — werk in je eigen tempo, op clubs die jij kiest.",
   robots: { index: true, follow: true },

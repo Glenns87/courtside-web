@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/footer";
 import { AanvragenForm } from "@/components/aanvragen-form";
 
 export const metadata: Metadata = {
-  title: "Aanvragen",
+  title: "Vraag jouw padel-les aan op maat",
   description: "Rond je aanvraag af — laat je contactgegevens achter en wij matchen binnen 48 uur.",
   alternates: { canonical: "/aanvragen" },
 };

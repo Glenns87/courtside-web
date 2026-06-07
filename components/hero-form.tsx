@@ -76,7 +76,7 @@ export function HeroForm() {
                 aria-checked={active}
                 onClick={() => setLevel(l)}
                 className={cn(
-                  "flex-1 px-2 py-[14px] font-serif text-[16px] tracking-[-0.3px] transition-colors duration-200",
+                  "flex-1 px-2 py-[14px] font-serif text-[14px] tracking-[-0.3px] transition-colors duration-200 md:text-[16px]",
                   active ? "bg-ink text-bg" : "bg-transparent text-ink",
                   i > 0 && !active && level !== LEVELS[i - 1] && "border-l border-ink",
                 )}

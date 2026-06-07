@@ -5,16 +5,9 @@ import { usePostHog } from "posthog-js/react";
 import { cn } from "@/lib/cn";
 import { submitLead } from "@/app/actions";
 import type { LeadFormState } from "@/app/actions";
+import { LOCATIONS } from "@/lib/validation";
 
-type Location = "Utrecht" | "Rotterdam" | "Den Haag" | "Amsterdam" | "Anders";
-
-const LOCATIONS: Location[] = [
-  "Utrecht",
-  "Rotterdam",
-  "Den Haag",
-  "Amsterdam",
-  "Anders",
-];
+type Location = (typeof LOCATIONS)[number];
 
 const GROUP_SIZES: { value: string; label: string }[] = [
   { value: "1", label: "1" },

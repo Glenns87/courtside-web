@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SiteNav } from "@/components/nav";
 import { Hero } from "@/components/hero";
-import { LiveScorecard } from "@/components/live-scorecard";
+import { HowItWorks } from "@/components/how-it-works";
 import { Benefits } from "@/components/benefits";
 import { ClubsAndTrainer } from "@/components/clubs-trainer";
 import { Founder } from "@/components/founder";
@@ -24,7 +24,7 @@ export default function HomePage() {
 
       <SiteNav />
       <Hero />
-      <LiveScorecard />
+      <HowItWorks />
       <Benefits />
       <ClubsAndTrainer />
       <Founder />

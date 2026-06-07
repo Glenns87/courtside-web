@@ -61,7 +61,7 @@ export default async function AanvragenPage({ searchParams }: { searchParams: Pa
           </h1>
           <p className="mt-5 max-w-hero-sub text-[15px] leading-[1.55] text-ink-dim">
             We matchen je binnen 48 uur met een groep op jouw niveau. Laat je gegevens achter —
-            onze trainer belt je persoonlijk voor de planning.
+            wij nemen persoonlijk contact op voor de planning.
           </p>
 
           <dl className="mt-7 grid grid-cols-3 border border-line bg-surface">
@@ -89,7 +89,6 @@ export default async function AanvragenPage({ searchParams }: { searchParams: Pa
             </div>
           </dl>
 
-          {/* Stub form — Claude Code vervangt door server action + Sanity write */}
           <AanvragenForm level={level} days={days} times={times} />
         </div>
       </section>

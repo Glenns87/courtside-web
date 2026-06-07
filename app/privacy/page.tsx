@@ -134,10 +134,10 @@ export default function PrivacyPage() {
               Stuur je verzoek naar{" "}
               {/* REVIEW JURIST: contact-mailadres voor AVG-verzoeken vaststellen. */}
               <a
-                href="mailto:privacy@courtside.nl"
+                href="mailto:glenn@gladvisor.nl"
                 className="underline"
               >
-                privacy@courtside.nl
+                glenn@gladvisor.nl
               </a>
               . We reageren binnen vier weken.
             </p>

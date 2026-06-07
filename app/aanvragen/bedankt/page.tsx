@@ -26,8 +26,8 @@ export default function BedanktPage() {
             Mooi. <em>De service is aan ons.</em>
           </h1>
           <p className="mt-5 max-w-hero-sub text-[15px] leading-[1.55] text-ink-dim">
-            We sturen je binnen 48 uur een voorstel voor je eerste les. Gratis,
-            vrijblijvend en op jouw moment.
+            We sturen je binnen 48 uur een voorstel voor je eerste les.
+            Vrijblijvend en op jouw moment.
           </p>
           <Link
             href="/"

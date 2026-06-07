@@ -57,7 +57,7 @@ export default function VoorwaardenPage() {
               2. Toepasselijkheid
             </h2>
             <p>
-              Deze voorwaarden gelden voor iedere aanvraag die je via courtside.nl
+              Deze voorwaarden gelden voor iedere aanvraag die je via courtsidepadel.nl
               indient en voor elke overeenkomst die daaruit voortkomt. Door je
               aanvraag te versturen ga je met deze voorwaarden akkoord.
             </p>

@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const LEVELS = ["Start", "Midden", "Gevorderd"] as const;
+export const LEVELS = ["Beginner", "Intermediate", "Gevorderd"] as const;
 export const DAYS = ["Ma", "Di", "Wo", "Do", "Vr", "Za", "Zo"] as const;
 export const LOCATIONS = [
   "Utrecht",

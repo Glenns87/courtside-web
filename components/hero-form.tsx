@@ -5,16 +5,16 @@ import { cn } from "@/lib/cn";
 import { submitLeadIntent } from "@/app/actions";
 import { NiveauQuiz } from "@/components/niveau-quiz";
 
-type Level = "Start" | "Midden" | "Gevorderd";
+type Level = "Beginner" | "Intermediate" | "Gevorderd";
 type Day = "Ma" | "Di" | "Wo" | "Do" | "Vr" | "Za" | "Zo";
 
 const LEVEL_META: Record<Level, string> = {
-  Start: "0–1 jr",
-  Midden: "1–3 jr",
+  Beginner: "0–1 jr",
+  Intermediate: "1–3 jr",
   Gevorderd: "3+ jr",
 };
 
-const LEVELS: Level[] = ["Start", "Midden", "Gevorderd"];
+const LEVELS: Level[] = ["Beginner", "Intermediate", "Gevorderd"];
 const DAYS: Day[] = ["Ma", "Di", "Wo", "Do", "Vr", "Za", "Zo"];
 
 // 15 tijdslots: 08:00 t/m 22:00, één per uur
@@ -24,7 +24,7 @@ const TIMES: string[] = Array.from({ length: 15 }, (_, i) => {
 });
 
 export function HeroForm() {
-  const [level, setLevel] = useState<Level>("Midden");
+  const [level, setLevel] = useState<Level>("Intermediate");
   const [days, setDays] = useState<Day[]>(["Wo"]);
   const [times, setTimes] = useState<string[]>(["19:00"]);
   const [isPending, startTransition] = useTransition();

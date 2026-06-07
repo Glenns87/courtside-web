@@ -29,7 +29,7 @@ function splitCsv(value: string | undefined, fallback: string[]): string[] {
 
 export default async function AanvragenPage({ searchParams }: { searchParams: Params }) {
   const params = await searchParams;
-  const level = params.level ?? "Midden";
+  const level = params.level ?? "Intermediate";
 
   // Multi-value via "days"/"times" of fallback naar single "day"/"time" (legacy)
   const days = splitCsv(params.days ?? params.day, ["Wo"]);

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { cn } from "@/lib/cn";
 
-type Level = "Start" | "Midden" | "Gevorderd";
+type Level = "Beginner" | "Intermediate" | "Gevorderd";
 
 type Question = {
   id: string;
@@ -60,8 +60,8 @@ const QUESTIONS: Question[] = [
 ];
 
 function scoreToLevel(score: number): Level {
-  if (score <= 3) return "Start";
-  if (score <= 7) return "Midden";
+  if (score <= 3) return "Beginner";
+  if (score <= 7) return "Intermediate";
   return "Gevorderd";
 }
 

@@ -7,7 +7,6 @@ import { Benefits } from "@/components/benefits";
 import { Founder } from "@/components/founder";
 import { FinalCta } from "@/components/final-cta";
 import { SiteFooter } from "@/components/footer";
-import { localBusinessSchema, serviceSchema } from "@/lib/schema-org";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -16,16 +15,6 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      {/* JSON-LD voor SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-
       <SiteNav />
       <Hero />
       <HowItWorks />

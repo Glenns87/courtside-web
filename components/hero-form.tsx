@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { usePostHog } from "posthog-js/react";
 import { cn } from "@/lib/cn";
 import { submitLeadIntent } from "@/app/actions";
 import { NiveauQuiz } from "@/components/niveau-quiz";
@@ -29,23 +30,27 @@ export function HeroForm() {
   const [times, setTimes] = useState<string[]>(["19:00"]);
   const [isPending, startTransition] = useTransition();
   const [ctaHover, setCtaHover] = useState(false);
+  const posthog = usePostHog();
 
   const toggleDay = (d: Day) => {
     setDays((prev) =>
       prev.includes(d) ? prev.filter((x) => x !== d) : [...prev, d],
     );
+    posthog?.capture("day_selected", { day: d });
   };
 
   const toggleTime = (t: string) => {
     setTimes((prev) =>
       prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t],
     );
+    posthog?.capture("time_selected", { time: t });
   };
 
   const hasSelection = days.length > 0 && times.length > 0;
 
   const handleSubmit = () => {
     if (!hasSelection) return;
+    posthog?.capture("hero_cta_clicked", { level, days, times });
     startTransition(async () => {
       await submitLeadIntent({ level, days, times });
     });
@@ -74,7 +79,10 @@ export function HeroForm() {
                 type="button"
                 role="radio"
                 aria-checked={active}
-                onClick={() => setLevel(l)}
+                onClick={() => {
+                  setLevel(l);
+                  posthog?.capture("niveau_selected", { level: l });
+                }}
                 className={cn(
                   "flex-1 px-2 py-[14px] font-serif text-[14px] tracking-[-0.3px] transition-colors duration-200 md:text-[16px]",
                   active ? "bg-ink text-bg" : "bg-transparent text-ink",

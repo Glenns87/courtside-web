@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState, useRef, useState } from "react";
+import { usePostHog } from "posthog-js/react";
 import { cn } from "@/lib/cn";
 import { submitLead } from "@/app/actions";
 import type { LeadFormState } from "@/app/actions";
@@ -44,6 +45,7 @@ export function AanvragenForm({ level, days, times }: Props) {
   const [lessonType, setLessonType] = useState("");
   const [ctaHover, setCtaHover] = useState(false);
   const otherInputRef = useRef<HTMLInputElement>(null);
+  const posthog = usePostHog();
   const [state, formAction, isPending] = useActionState(
     submitLead,
     INITIAL_STATE,
@@ -61,6 +63,11 @@ export function AanvragenForm({ level, days, times }: Props) {
         setOtherLocation("");
       }
       return next;
+    });
+
+    posthog?.capture("location_toggled", {
+      location: loc,
+      action: isAdding ? "add" : "remove",
     });
 
     if (loc === "Anders" && isAdding) {
@@ -158,7 +165,12 @@ export function AanvragenForm({ level, days, times }: Props) {
                 key={option.value}
                 type="button"
                 aria-pressed={active}
-                onClick={() => setLessonType(option.value)}
+                onClick={() => {
+                  setLessonType(option.value);
+                  posthog?.capture("lesson_type_selected", {
+                    lessonType: option.value,
+                  });
+                }}
                 className={cn(
                   "border px-3 py-2 font-sans text-[13px] tracking-[-0.1px] transition-colors duration-150",
                   active
@@ -188,7 +200,12 @@ export function AanvragenForm({ level, days, times }: Props) {
                 key={option.value}
                 type="button"
                 aria-pressed={active}
-                onClick={() => setGroupSize(option.value)}
+                onClick={() => {
+                  setGroupSize(option.value);
+                  posthog?.capture("group_size_selected", {
+                    groupSize: option.value,
+                  });
+                }}
                 className={cn(
                   "border px-3 py-2 font-sans text-[13px] tracking-[-0.1px] transition-colors duration-150",
                   active

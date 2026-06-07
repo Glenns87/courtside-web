@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState, useRef, useState } from "react";
+import { usePostHog } from "posthog-js/react";
 import { cn } from "@/lib/cn";
 import { submitTrainerApplication } from "@/app/actions";
 import type { LeadFormState } from "@/app/actions";
@@ -39,6 +40,7 @@ export function TrainerForm() {
   const [otherRegion, setOtherRegion] = useState("");
   const [ctaHover, setCtaHover] = useState(false);
   const otherInputRef = useRef<HTMLInputElement>(null);
+  const posthog = usePostHog();
   const [state, formAction, isPending] = useActionState(
     submitTrainerApplication,
     INITIAL_STATE,
@@ -109,7 +111,12 @@ export function TrainerForm() {
                 key={option.value}
                 type="button"
                 aria-pressed={active}
-                onClick={() => setPlayLevel(option.value)}
+                onClick={() => {
+                  setPlayLevel(option.value);
+                  posthog?.capture("trainer_play_level_selected", {
+                    playLevel: option.value,
+                  });
+                }}
                 className={cn(SEGMENT_CLASS, segmentColors(active))}
               >
                 {option.label}
@@ -136,7 +143,12 @@ export function TrainerForm() {
                 key={option.value}
                 type="button"
                 aria-pressed={active}
-                onClick={() => setTeachExperience(option.value)}
+                onClick={() => {
+                  setTeachExperience(option.value);
+                  posthog?.capture("trainer_teach_experience_selected", {
+                    teachExperience: option.value,
+                  });
+                }}
                 className={cn(SEGMENT_CLASS, segmentColors(active))}
               >
                 {option.label}

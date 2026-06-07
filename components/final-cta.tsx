@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { usePostHog } from "posthog-js/react";
 import { cn } from "@/lib/cn";
 
 export function FinalCta() {
   const [hover, setHover] = useState(false);
+  const posthog = usePostHog();
 
   return (
     <section aria-labelledby="final-cta-heading" className="px-0 pb-8 pt-14">
@@ -35,6 +37,7 @@ export function FinalCta() {
 
           <button
             type="button"
+            onClick={() => posthog?.capture("final_cta_clicked")}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
             onFocus={() => setHover(true)}

@@ -1,8 +1,10 @@
 "use server";
 
+import { randomUUID } from "node:crypto";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { Resend } from "resend";
+import { PostHog } from "posthog-node";
 import {
   LeadIntentSchema,
   LeadSchema,
@@ -13,6 +15,29 @@ import {
 import { rateLimit } from "@/lib/rate-limit";
 
 const DEFAULT_FROM_EMAIL = "Courtside <onboarding@resend.dev>";
+
+/**
+ * Server-side PostHog capture. Best-effort: analytics-fouten mogen de
+ * Resend-flow of de redirect nooit blokkeren. distinct_id is een random UUID
+ * per request — bewust geen e-mail/telefoon/naam (PII-veilig).
+ */
+async function captureServerEvent(
+  event: string,
+  properties: Record<string, unknown>,
+): Promise<void> {
+  const key = process.env.NEXT_PUBLIC_POSTHOG_KEY;
+  if (!key) return;
+
+  try {
+    const posthog = new PostHog(key, {
+      host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+    });
+    posthog.capture({ distinctId: randomUUID(), event, properties });
+    await posthog.shutdown();
+  } catch (err) {
+    console.error("[captureServerEvent] posthog capture failed", err);
+  }
+}
 
 export type LeadFormState = {
   ok: boolean;
@@ -98,6 +123,15 @@ export async function submitLead(
     };
   }
 
+  await captureServerEvent("lead_submitted", {
+    level: result.data.level,
+    days: result.data.days,
+    times: result.data.times,
+    groupSize: result.data.groupSize,
+    lessonType: result.data.lessonType,
+    locationsCount: result.data.locations.length,
+  });
+
   redirect("/aanvragen/bedankt");
 }
 
@@ -160,6 +194,12 @@ export async function submitTrainerApplication(
         "Versturen lukte niet. Probeer het zo opnieuw of mail rechtstreeks naar bookings@courtside.nl.",
     };
   }
+
+  await captureServerEvent("trainer_application_submitted", {
+    playLevel: result.data.playLevel,
+    teachExperience: result.data.teachExperience,
+    regionsCount: result.data.regions.length,
+  });
 
   redirect("/trainer-worden/bedankt");
 }

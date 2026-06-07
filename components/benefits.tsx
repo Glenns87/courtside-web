@@ -7,31 +7,23 @@ type Benefit = {
   n: string;
   title: string;
   body: string;
-  stat: string;
-  statLabel: string;
 };
 
 const BENEFITS: Benefit[] = [
   {
     n: "I",
     title: "Slim gematcht op niveau",
-    body: "Onze match-engine leest je spel — ritme, placering, kracht — en koppelt je aan spelers waar je tegen groeit.",
-    stat: "92%",
-    statLabel: "match-accuracy",
+    body: "Wij luisteren naar je niveau, voorkeur en doel, en koppelen je aan spelers waar je tegen groeit.",
   },
   {
     n: "II",
     title: "Progressie na elke les",
-    body: "Meetbare voortgang. Na iedere sessie een persoonlijk rapport, video-moment en focus voor de volgende keer.",
-    stat: "+18%",
-    statLabel: "skill / 3 mnd",
+    body: "Korte terugkoppeling na elke les, zodat je weet wat de volgende stap is.",
   },
   {
     n: "III",
     title: "Plan wanneer jij wil",
-    body: "Zeven dagen per week, vroeg tot laat. Kies je tijdslot en wij hebben binnen 48 uur je groep compleet.",
-    stat: "48u",
-    statLabel: "match-garantie",
+    body: "Zeven dagen per week, vroeg tot laat. Persoonlijk contact binnen 48 uur na je aanmelding.",
   },
 ];
 
@@ -96,16 +88,8 @@ export function Benefits() {
                         →
                       </div>
                     </div>
-                    <div className="mb-2.5 text-[14px] leading-[1.5] text-ink-dim">
+                    <div className="text-[14px] leading-[1.5] text-ink-dim">
                       {b.body}
-                    </div>
-                    <div className="flex items-baseline gap-2">
-                      <span className="font-serif text-[22px] font-medium tracking-[-0.4px] text-green">
-                        {b.stat}
-                      </span>
-                      <span className="font-mono text-[10px] uppercase tracking-[0.6px] text-ink-mute">
-                        {b.statLabel}
-                      </span>
                     </div>
                   </div>
                 </div>

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteNav } from "@/components/nav";
 import { Hero } from "@/components/hero";
@@ -7,6 +8,10 @@ import { Founder } from "@/components/founder";
 import { FinalCta } from "@/components/final-cta";
 import { SiteFooter } from "@/components/footer";
 import { localBusinessSchema, serviceSchema } from "@/lib/schema-org";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   return (

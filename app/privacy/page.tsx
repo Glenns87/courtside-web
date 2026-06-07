@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Privacyverklaring",
   description:
     "Hoe Courtside Padel met je persoonsgegevens omgaat — doel, rechtsgrond, bewaartermijn en je rechten onder de AVG.",
+  alternates: { canonical: "/privacy" },
 };
 
 const LAST_UPDATED = "2 juni 2026";

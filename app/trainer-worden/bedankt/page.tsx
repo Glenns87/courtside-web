@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Bedankt",
   description: "We nemen binnen 5 werkdagen contact op voor een kennismaking.",
   robots: { index: false, follow: false },
+  alternates: { canonical: "/trainer-worden/bedankt" },
 };
 
 export default function TrainerBedanktPage() {

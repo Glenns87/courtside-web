@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description:
     "Word trainer bij Courtside Padel. We koppelen padel-spelers aan trainers in jouw regio — werk in je eigen tempo, op clubs die jij kiest.",
   robots: { index: true, follow: true },
+  alternates: { canonical: "/trainer-worden" },
 };
 
 export default function TrainerWordenPage() {

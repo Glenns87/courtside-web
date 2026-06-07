@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Algemene voorwaarden",
   description:
     "De voorwaarden waaronder Courtside Padel je matcht met een trainer en lessen aanbiedt.",
+  alternates: { canonical: "/voorwaarden" },
 };
 
 const LAST_UPDATED = "2 juni 2026";

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Bedankt",
   description: "We sturen je binnen 48 uur een voorstel voor je eerste les.",
   robots: { index: false, follow: false },
+  alternates: { canonical: "/aanvragen/bedankt" },
 };
 
 export default function BedanktPage() {

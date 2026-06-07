@@ -7,6 +7,7 @@ import { AanvragenForm } from "@/components/aanvragen-form";
 export const metadata: Metadata = {
   title: "Aanvragen",
   description: "Rond je aanvraag af — laat je contactgegevens achter en wij matchen binnen 48 uur.",
+  alternates: { canonical: "/aanvragen" },
 };
 
 type Params = Promise<{

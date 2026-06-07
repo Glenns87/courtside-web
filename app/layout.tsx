@@ -26,14 +26,13 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://courtside.nl"),
+  metadataBase: new URL("https://courtsidepadel.nl"),
   title: {
     default: "Courtside Padel — Padel lessen op jouw niveau",
     template: "%s · Courtside Padel",
   },
   description:
     "Padel-lessen die bij jou passen. Vooraf duidelijkheid over trainer, niveau en planning. Aanmelden duurt 60 seconden — wij koppelen je binnen 48 uur.",
-  keywords: ["padel", "padel lessen", "Utrecht", "padel trainer", "padel club", "Courtside Padel"],
   openGraph: {
     title: "Courtside Padel — Padel lessen op jouw niveau",
     description:

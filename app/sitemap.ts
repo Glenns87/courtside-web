@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://courtside.nl";
+  const base = "https://courtsidepadel.nl";
   const now = new Date();
 
   return [
@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${base}/aanvragen`,
+      url: `${base}/trainer-worden`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.6,

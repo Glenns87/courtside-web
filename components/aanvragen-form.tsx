@@ -183,7 +183,7 @@ export function AanvragenForm({ level, days, times }: Props) {
           Met hoeveel personen?
         </span>
         <p className="mt-1 text-[12px] leading-[1.5] text-ink-mute">
-          1 = privéles, 4 = vol team van twee koppels
+          1 = privéles, 4 = volledige groep
         </p>
         <div className="mt-2 flex flex-wrap gap-1">
           {GROUP_SIZES.map((option) => {

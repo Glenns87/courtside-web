@@ -3,7 +3,6 @@ import { SiteNav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { HowItWorks } from "@/components/how-it-works";
 import { Benefits } from "@/components/benefits";
-import { ClubsAndTrainer } from "@/components/clubs-trainer";
 import { Founder } from "@/components/founder";
 import { FinalCta } from "@/components/final-cta";
 import { SiteFooter } from "@/components/footer";
@@ -26,7 +25,6 @@ export default function HomePage() {
       <Hero />
       <HowItWorks />
       <Benefits />
-      <ClubsAndTrainer />
       <Founder />
       <FinalCta />
 

@@ -17,7 +17,7 @@ export function Founder() {
           id="founder-heading"
           className="mb-6 font-serif text-[34px] font-light leading-[0.98] tracking-[-1px] text-ink"
         >
-          Padel verdient <em>betere koppelingen.</em>
+          Jouw padeltrainer, <em>slim gematcht.</em>
         </h2>
 
         {/* Founder-foto placeholder */}

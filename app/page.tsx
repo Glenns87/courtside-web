@@ -9,7 +9,24 @@ import { FinalCta } from "@/components/final-cta";
 import { SiteFooter } from "@/components/footer";
 
 export const metadata: Metadata = {
+  title: { absolute: "Padelles op jouw niveau | Courtside Padel" },
+  description:
+    "Padelles die bij jou past — vooraf duidelijkheid over trainer, niveau en planning. Aanmelden duurt 60 seconden, koppeling binnen 48 uur.",
   alternates: { canonical: "/" },
+  openGraph: {
+    title: "Padelles op jouw niveau | Courtside Padel",
+    description:
+      "Padelles die bij jou past — vooraf duidelijkheid over trainer, niveau en planning. Aanmelden duurt 60 seconden, koppeling binnen 48 uur.",
+    locale: "nl_NL",
+    type: "website",
+    siteName: "Courtside Padel",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Padelles op jouw niveau | Courtside Padel",
+    description:
+      "Padelles die bij jou past — vooraf duidelijkheid over trainer, niveau en planning. Aanmelden duurt 60 seconden, koppeling binnen 48 uur.",
+  },
 };
 
 export default function HomePage() {

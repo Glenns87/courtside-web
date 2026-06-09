@@ -32,9 +32,9 @@ export function HowItWorks() {
           id="how-it-works-heading"
           className="mb-7 font-serif text-[34px] font-light leading-[0.98] tracking-[-1px]"
         >
-          Drie stappen,
+          In drie stappen naar
           <br />
-          <em>geen gedoe.</em>
+          <em>je eerste padeltraining</em>
         </h2>
 
         <div className="border-t border-line">

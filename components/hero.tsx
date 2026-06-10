@@ -8,7 +8,7 @@ export function Hero() {
         <div className="mb-[22px] flex items-center gap-[10px]">
           <div className="h-px w-6 bg-ink" />
           <span className="font-mono text-[10px] uppercase tracking-[1.6px] text-ink-dim">
-            Padel · Program Nº 024
+            Padel · Program Nº 087
           </span>
         </div>
 

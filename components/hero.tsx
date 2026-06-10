@@ -17,11 +17,11 @@ export function Hero() {
           id="hero-heading"
           className="font-serif text-[48px] font-light leading-[0.92] tracking-[-1.8px] text-ink"
         >
-          Padelles op
+          Padelles op{" "}
           <br />
           <em className="font-light not-italic">
             <span className="italic">jouw</span> niveau.
-          </em>
+          </em>{" "}
           <br />
           <span className="hero-highlight">Elke week.</span>
         </h1>

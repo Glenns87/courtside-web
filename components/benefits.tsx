@@ -43,7 +43,7 @@ export function Benefits() {
           id="benefits-heading"
           className="mb-7 font-serif text-[34px] font-light leading-[0.98] tracking-[-1px]"
         >
-          Padeltraining gericht op
+          Padeltraining gericht op{" "}
           <br />
           <em>echte progressie</em>
         </h2>

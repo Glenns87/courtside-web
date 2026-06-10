@@ -25,9 +25,9 @@ export function FinalCta() {
             id="final-cta-heading"
             className="mb-4 font-serif text-[34px] font-light leading-[0.95] tracking-[-1px]"
           >
-            Elke week
+            Elke week{" "}
             <br />
-            <em>doorgroeien.</em>
+            <em>doorgroeien.</em>{" "}
             <br />
             Start vandaag.
           </h2>

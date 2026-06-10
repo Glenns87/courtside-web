@@ -50,7 +50,7 @@ const QUESTIONS: Question[] = [
   },
   {
     id: "glass",
-    label: "Spelen met het glas (boarduit + ricochets)",
+    label: "Spelen met het glas",
     options: [
       { text: "Ik vermijd glas-ballen", score: 0 },
       { text: "Soms een lucky shot", score: 1 },

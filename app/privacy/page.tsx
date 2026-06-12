@@ -342,7 +342,7 @@ export default function PrivacyPage() {
             </h2>
             <p>
               Courtside Padel kan deze privacyverklaring aanpassen. De meest
-              recente versie staat altijd op deze pagina; de datum onderaan geeft
+              recente versie staat altijd op deze pagina; de datum bovenaan geeft
               aan wanneer we de tekst voor het laatst hebben bijgewerkt. Bij
               ingrijpende wijzigingen die gevolgen hebben voor de wijze waarop we
               reeds verzamelde gegevens verwerken, brengen we je per e-mail op de

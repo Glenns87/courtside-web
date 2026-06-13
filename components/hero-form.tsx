@@ -192,18 +192,6 @@ export function HeroForm() {
         </span>
         <span className="relative z-10 font-mono text-[11px] tracking-[1px]">→</span>
       </button>
-
-      <p className="mt-3 text-[11px] leading-[1.5] text-ink-mute">
-        Door verder te gaan ga je akkoord met onze{" "}
-        <a href="/voorwaarden" className="underline">
-          voorwaarden
-        </a>
-        {" en "}
-        <a href="/privacy" className="underline">
-          privacyverklaring
-        </a>
-        .
-      </p>
     </>
   );
 }
